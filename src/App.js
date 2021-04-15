@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from "styled-components";
+import { GlobalStyle } from "./utils/Global";
+import Rating from "./components/Rating";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Layout>
+        <div>
+          <h1>Rate your experience</h1>
+          <Rating maxRating={5} name="rating" />
+        </div>
+      </Layout>
+      <GlobalStyle />
+    </>
   );
 }
 
-export default App;
+const Layout = styled.div`
+  display: grid;
+  place-items: center;
+  height: 100vh;
+`;
